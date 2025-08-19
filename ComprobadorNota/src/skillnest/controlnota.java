@@ -17,6 +17,11 @@ public class controlnota {
             double nota = sc.nextDouble();
             notas.add(nota);
         }
+        double promedio = calcularPromedio(notas);
+        String estado = determinarEstado(promedio, 60);
+        System.out.printf("Estudiante: %s Promedio: %.2f Estado: %s%n",
+                nombre, promedio, estado);
+
 
 
 
