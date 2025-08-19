@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class controlnota {
+/**
+ * Calcula Promedio de nota del estudiante e informa si aprueba o no
+ * */
+
+public class controlNota {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -21,11 +25,6 @@ public class controlnota {
         String estado = determinarEstado(promedio, 60);
         System.out.printf("Estudiante: %s Promedio: %.2f Estado: %s%n",
                 nombre, promedio, estado);
-
-
-
-
-
     }
     /**
      * Calcula el promedio aritmético de una lista de calificaciones.
@@ -35,7 +34,7 @@ public class controlnota {
      * @throws IllegalArgumentException si la lista es nula o está vacía
      */
     public static double calcularPromedio(List<Double> notas){
-        if (notas.isEmpty() || notas == null ) {
+        if (notas.isEmpty()) {
             throw new IllegalArgumentException("La lista de notas no puede ser nula o vacia");
         }
         double suma = 0;
@@ -51,7 +50,7 @@ public class controlnota {
      *
      * @param promedio           promedio del estudiante
      * @param minimaAprobatoria  nota mínima para aprobar
-     * @return "Aprobado" si promedio & ; mínima; de lo contrario, "Reprobado"
+     * @return "Aprobado" si promedio; mínima; de lo contrario, "Reprobado"
      */
     public static String determinarEstado(double promedio, double minimaAprobatoria) {
         return promedio >= minimaAprobatoria ? "Aprobado" : "Reprobado";
